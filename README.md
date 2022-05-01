@@ -2,4 +2,4 @@
 
 Адаптивная верстка + начальный JavaScript.
 
-[Ссылка]() на GitHub Pages.
+[Ссылка](https://nknrw.github.io/mesto/) на GitHub Pages.
