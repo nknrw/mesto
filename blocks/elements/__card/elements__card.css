@@ -1,0 +1,10 @@
+.elements__card {
+    max-width: 100%;
+    background-color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 0 auto;
+}
