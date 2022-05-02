@@ -4,6 +4,8 @@
     margin: 0;
     border: none;
     border-bottom: 1px solid #000000;
+    font-size: 14px;
+    line-height: 1.21;
 }
 
 @media screen and (max-width: 767px) {
@@ -11,3 +13,9 @@
         width: calc(100% - 22px * 2);
     }
 }
+
+/* Сделал чуть покрасивее, надеюсь не будет считаться ошибкой :) */
+.popup__input:focus {
+    outline: none;
+}
+
