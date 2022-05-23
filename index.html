@@ -21,42 +21,15 @@
             <button type="button" class="profile__add-button"></button>
         </section>
         <section class="elements">
-            <div class="elements__card">
-                <img class="elements__image" src="./images/karachaevsk.png" alt="Карачаевск">
-                <h2 class="elements__title">Карачаевск</h2>
-                <button type="button" class="elements__like-button"></button>
-            </div>
-            <div class="elements__card">
-                <img class="elements__image" src="./images/elbrus.png" alt="Гора Эльбрус">
-                <h2 class="elements__title">Гора Эльбрус</h2>
-                <button type="button" class="elements__like-button"></button>
-            </div>
-            <div class="elements__card">
-                <img class="elements__image" src="./images/dombay.png" alt="Домбай">
-                <h2 class="elements__title">Домбай</h2>
-                <button type="button" class="elements__like-button"></button>
-            </div>
-            <div class="elements__card">
-                <img class="elements__image" src="./images/elbrus.png" alt="Гора Эльбрус">
-                <h2 class="elements__title">Гора Эльбрус</h2>
-                <button type="button" class="elements__like-button"></button>
-            </div>
-            <div class="elements__card">
-                <img class="elements__image" src="./images/dombay.png" alt="Домбай">
-                <h2 class="elements__title">Домбай</h2>
-                <button type="button" class="elements__like-button"></button>
-            </div>
-            <div class="elements__card">
-                <img class="elements__image" src="./images/karachaevsk.png" alt="Карачаево-Черкесия">
-                <h2 class="elements__title">Карачаево-Черкесия</h2>
-                <button type="button" class="elements__like-button"></button>
-            </div>
+            <ul class="elements__container">
+
+            </ul>
         </section>
     </main> 
     <footer class="footer">
         <p class="footer__copyright">© 2022 Mesto Russia</p>
     </footer>
-    <section class="popup">
+    <section class="popup popup_profile">
         <form class="popup__container" name="form">
             <h3 class="popup__title">Редактировать профиль</h3>
             <input class="popup__input popup__input_name" placeholder="Имя" type="text" name="name" value="Жак-Ив Кусто">
@@ -65,6 +38,32 @@
             <button type="button" class="popup__close-button"></button>
         </form>
     </section>
+    <section class="popup popup_card">
+        <form class="popup__container" name="form">
+            <h3 class="popup__title">Новое место</h3>
+            <input class="popup__input popup__input_title" placeholder="Название" type="text" name="title">
+            <input class="popup__input popup__input_link" placeholder="Ссылка на картинку" type="text" name="link">
+            <button class="popup__submit-button" type="submit">Создать</button>
+            <button type="button" class="popup__close-button"></button>
+        </form>
+    </section>
+    <section class="popup popup_fullscreen">
+        <div class="popup__image-container">
+            <figure class="popup__figure">
+                <button type="button" class="popup__close-button"></button>
+                <img class="popup__image" src="" alt="">
+                <figcaption class="popup__caption"></figcaption>
+            </figure>
+        </div>
+    </section>
+    <template class="elements__template">
+        <li class="elements__card">
+            <button type="button" class="elements__trash-button"></button>
+            <img class="elements__image" src="" alt="">
+            <h2 class="elements__title"></h2>
+            <button type="button" class="elements__like-button"></button>
+        </li>
+    </template>
     <script src="./script/script.js"></script>
 </body>
 </html>
