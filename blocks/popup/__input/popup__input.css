@@ -14,8 +14,10 @@
     }
 }
 
-/* Сделал чуть покрасивее, надеюсь не будет считаться ошибкой :) */
 .popup__input:focus {
     outline: none;
 }
 
+/* .popup__input:invalid {
+    border-color: #ff0000;
+} */
