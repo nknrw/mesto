@@ -1,4 +1,4 @@
-const popup = document.querySelectorAll('.popup');
+const popups = document.querySelectorAll('.popup');
 
 const popupProfile = document.querySelector('.popup_profile');
 const buttonProfileEdit = document.querySelector('.profile__edit-button');
@@ -84,14 +84,17 @@ function addCard(item) {
     return cardTemplate;
 }
 
-function openPopup(popup) {
-    popup.classList.add('popup_active');
+function openPopup(popups, buttonSubmit) {
+    enableValidation(buttonSubmit);
+    popups.classList.add('popup_active');
     document.addEventListener('keydown', pressEsc);
-    document.addEventListener('click', clickOverlay);
+    popups.addEventListener('mousedown', clickOverlay);
 }
 
-function closePopup(popup) {
-    popup.classList.remove('popup_active');
+function closePopup(popups) {
+    popups.classList.remove('popup_active');
+    document.removeEventListener('keydown', pressEsc);
+    popups.removeEventListener('mousedown', clickOverlay);
 }
 
 function editProfile() {
@@ -150,7 +153,6 @@ function pressEsc(evt) {
 
 function clickOverlay(evt) {
 	if (evt.target.classList.contains('popup')) {
-		const popupOpened = document.querySelector('.popup_active');
-		closePopup(popupOpened);
+		closePopup(evt.target);
 	}
 }
