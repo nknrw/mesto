@@ -1,4 +1,17 @@
-const popup = document.querySelectorAll('.popup');
+// const popups = document.querySelectorAll('.popup');
+
+const popups = document.querySelectorAll('.popup')
+
+popups.forEach((popup) => {
+    popup.addEventListener('mousedown', (evt) => {
+        if (evt.target.classList.contains('popup_opened')) {
+            closePopup(popup)
+        }
+        if (evt.target.classList.contains('popup__close')) {
+            closePopup(popup)
+        }
+    })
+})
 
 const popupProfile = document.querySelector('.popup_profile');
 const buttonProfileEdit = document.querySelector('.profile__edit-button');
@@ -84,14 +97,17 @@ function addCard(item) {
     return cardTemplate;
 }
 
-function openPopup(popup) {
-    popup.classList.add('popup_active');
-    document.addEventListener('keydown', pressEsc);
-    document.addEventListener('click', clickOverlay);
+function openPopup(popups) {
+    enableValidation(config);
+    popups.classList.add('popup_active');
+    // document.addEventListener('keydown', pressEsc);
+    // popups.addEventListener('mousedown', clickOverlay);
 }
 
-function closePopup(popup) {
-    popup.classList.remove('popup_active');
+function closePopup(popups) {
+    popups.classList.remove('popup_active');
+    // document.removeEventListener('keydown', pressEsc);
+    // popups.removeEventListener('mousedown', clickOverlay);
 }
 
 function editProfile() {
@@ -141,16 +157,15 @@ buttonCardClose.addEventListener('click', () => closePopup(popupCard));
 
 buttonImageClose.addEventListener('click', () => closePopup(popupFullscreen))
 
-function pressEsc(evt) {
-    if (evt.key === 'Escape') {
-        const popupOpened = document.querySelector('.popup_active');
-        closePopup(popupOpened);
-    };
-}
+// function pressEsc(evt) {
+//     if (evt.key === 'Escape') {
+//         const popupOpened = document.querySelector('.popup_active');
+//         closePopup(popupOpened);
+//     };
+// }
 
-function clickOverlay(evt) {
-	if (evt.target.classList.contains('popup')) {
-		const popupOpened = document.querySelector('.popup_active');
-		closePopup(popupOpened);
-	}
-}
+// function clickOverlay(evt) {
+// 	if (evt.target.classList.contains('popup')) {
+// 		closePopup(evt.target);
+// 	}
+// }
