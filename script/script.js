@@ -84,8 +84,8 @@ function addCard(item) {
     return cardTemplate;
 }
 
-function openPopup(popups, buttonSubmit) {
-    enableValidation(buttonSubmit);
+function openPopup(popups) {
+    enableValidation(config);
     popups.classList.add('popup_active');
     document.addEventListener('keydown', pressEsc);
     popups.addEventListener('mousedown', clickOverlay);
