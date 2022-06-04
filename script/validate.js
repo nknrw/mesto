@@ -33,14 +33,15 @@ function toggleSubmitButton(inputs, buttonSubmit, config) {
         buttonSubmit.removeAttribute('disabled', '');
     }
 }
-
+        
 function validateInputs(inputs) {
     return inputs.some((input) => {
         return !input.validity.valid;
     });
 }
 
-const handleInputValidity = (form, input, config) => {
+const handleInputValidity = (form, input, inputs, buttonSubmit, config) => {
+    toggleSubmitButton(inputs, buttonSubmit, config)
     if (!input.validity.valid) {
         showValidationError(form, input, config);
     } else {
@@ -55,7 +56,7 @@ const setEventListeners = (form, config) => {
     toggleSubmitButton(inputs, buttonSubmit, config);
     inputs.forEach((input) => {
         input.addEventListener('input', function () {
-            handleInputValidity(form, input, config);
+            handleInputValidity(form, input, inputs, buttonSubmit, config);
             toggleSubmitButton(inputs, buttonSubmit, config);
         });
     });
@@ -70,3 +71,4 @@ const enableValidation = (config) => {
 };
 
 enableValidation(config);
+
