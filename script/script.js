@@ -153,15 +153,20 @@ function pressEsc(evt) {
     };
 }
 
-buttonProfileEdit.addEventListener('click', editProfile);
+buttonProfileEdit.addEventListener('click', function() {
+    formProfile.reset();
+    resetErrors(formProfile, config);
+    editProfile(popupProfile);
+});
 formProfile.addEventListener('submit', submitFormProfile); 
 buttonProfileClose.addEventListener('click', () => closePopup(popupProfile));
 
 buttonCardAdd.addEventListener('click', function() {
     formCard.reset();
-    setEventListeners(formCard, config);
+    resetErrors(formCard, config);
     openPopup(popupCard);
 });
+
 formCard.addEventListener('submit', submitFormCard); 
 buttonCardClose.addEventListener('click', () => closePopup(popupCard));
 

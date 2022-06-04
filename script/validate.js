@@ -20,7 +20,7 @@ const hideValidationError = (form, input, config) => {
     const errorSpan = form.querySelector(`.${input.id}-error`);
     input.classList.remove(`${inputErrorClass}`);
     errorSpan.classList.remove(`${errorClass}`);
-    errorSpan.textContent = "";
+    errorSpan.textContent = '';
 };
 
 function toggleSubmitButton(inputs, buttonSubmit, config) {
@@ -31,14 +31,14 @@ function toggleSubmitButton(inputs, buttonSubmit, config) {
     } else {
         buttonSubmit.classList.remove(`${inactiveButtonClass}`);
         buttonSubmit.removeAttribute('disabled', '');
-    }
-}
+    };
+};
         
 function validateInputs(inputs) {
     return inputs.some((input) => {
         return !input.validity.valid;
     });
-}
+};
 
 const handleInputValidity = (form, input, inputs, buttonSubmit, config) => {
     toggleSubmitButton(inputs, buttonSubmit, config)
@@ -72,3 +72,22 @@ const enableValidation = (config) => {
 
 enableValidation(config);
 
+// const resetErrors = (form, config) => {
+//     const {inputSelector, submitButtonSelector, inactiveButtonClass} = config;
+//     const inputs = Array.from(form.querySelectorAll(`.${inputSelector}`));
+//     const buttonSubmit = form.querySelector(`.${submitButtonSelector}`);
+//     inputs.forEach((input) => {
+//         hideValidationError(form, input, config);
+//         toggleSubmitButton(inputs, buttonSubmit, inactiveButtonClass);
+//     });
+// };
+
+const resetErrors = (form, config) => {
+    const { inputSelector, submitButtonSelector } = config;
+    const inputs = Array.from(form.querySelectorAll(`.${inputSelector}`));
+    const buttonSubmit = form.querySelector(`.${submitButtonSelector}`);
+    inputs.forEach((input) => {
+        hideValidationError(form, input, config);
+        toggleSubmitButton(inputs, buttonSubmit, config);
+    });
+};
