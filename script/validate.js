@@ -72,16 +72,6 @@ const enableValidation = (config) => {
 
 enableValidation(config);
 
-// const resetErrors = (form, config) => {
-//     const {inputSelector, submitButtonSelector, inactiveButtonClass} = config;
-//     const inputs = Array.from(form.querySelectorAll(`.${inputSelector}`));
-//     const buttonSubmit = form.querySelector(`.${submitButtonSelector}`);
-//     inputs.forEach((input) => {
-//         hideValidationError(form, input, config);
-//         toggleSubmitButton(inputs, buttonSubmit, inactiveButtonClass);
-//     });
-// };
-
 const resetErrors = (form, config) => {
     const { inputSelector, submitButtonSelector } = config;
     const inputs = Array.from(form.querySelectorAll(`.${inputSelector}`));
