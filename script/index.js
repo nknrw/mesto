@@ -68,6 +68,7 @@ function submitFormProfile(evt) {
 	closePopup(popupProfile);
 }
 
+// Функция создания новой карточки
 function createCard(item) {
 	const card = new Card(item, '.elements__template')
 	return card.generateCard()
@@ -80,7 +81,7 @@ function submitFormCard(evt) {
 	closePopup(popupCard);
 }
 
-// Функия добавления новой карточки
+// Функия добавления новой карточки в контейнер
 function renderElement(card) {
 	cardContainer.prepend(card);
 }

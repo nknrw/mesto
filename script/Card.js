@@ -60,4 +60,3 @@ export default class Card {
 		return this._element;
 	}
 }
-// export default Card;
