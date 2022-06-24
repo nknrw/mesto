@@ -7,11 +7,6 @@ export default class FormValidator {
 		this._inactiveButtonClass = config.inactiveButtonClass;
 		this._inputErrorClass = config.inputErrorClass;
 		this._errorClass = config.errorClass;
-
-		this._inputList = Array.from(this._form.querySelectorAll(this._inputSelector));
-		this._buttonSubmit = this._form.querySelector(this._submitButtonSelector);
-
-
 	}
 
 	// Вывод ошибки
@@ -41,39 +36,43 @@ export default class FormValidator {
 	}
 
 	// Проверка валидности
-	_validateInputs(inputList) {
-		return inputList.some((input) => {
+	_validateInputs(inputs) {
+		return inputs.some((input) => {
 			return !input.validity.valid;
 		});
 	}
 
 	// Переключение состояния кнопки отправки
-	_toggleSubmitButton() {
-		if (this._validateInputs(this._inputList)) {
-			this._buttonSubmit.classList.add(this._inactiveButtonClass);
-			this._buttonSubmit.disabled = true;
+	_toggleSubmitButton(inputs, buttonSubmit) {
+		if (this._validateInputs(inputs)) {
+			buttonSubmit.classList.add(this._inactiveButtonClass);
+			buttonSubmit.disabled = true;
 		} else {
-			this._buttonSubmit.classList.remove(this._inactiveButtonClass);
-			this._buttonSubmit.disabled = false;
+			buttonSubmit.classList.remove(`${this._inactiveButtonClass}`);
+			buttonSubmit.disabled = false;
 		}
 	}
 
 	// Включение валидации
 	enableValidation() {
-		this._inputList.forEach((inputElement) => {
+		const inputs = Array.from(this._form.querySelectorAll(`.${this._inputSelector}`));
+		const buttonSubmit = this._form.querySelector(`.${this._submitButtonSelector}`);
+		inputs.forEach((inputElement) => {
 			inputElement.addEventListener("input", () => {
 				this._handleInputValidity(inputElement);
-				this._toggleSubmitButton();
+				this._toggleSubmitButton(inputs, buttonSubmit);
 			});
 		});
-		this._toggleSubmitButton();
+		this._toggleSubmitButton(inputs, buttonSubmit);
 	}
 
 	// Сброс ошибок 
 	cleanErrorForm() {
-		this._inputList.forEach((input) => {
+		const inputs = Array.from(this._form.querySelectorAll(`.${this._inputSelector}`));
+		const buttonSubmit = this._form.querySelector(`.${this._submitButtonSelector}`);
+		inputs.forEach((input) => {
 			this._hideValidationError(input);
 		});
-		this._toggleSubmitButton();
+		this._toggleSubmitButton(inputs, buttonSubmit);
 	}
 }

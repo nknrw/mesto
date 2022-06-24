@@ -1,7 +1,7 @@
-import { popupFullscreen, openPopup } from "./index.js";
+import { popupFullscreen, openPopup } from "./utils.js";
 
 export default class Card {
-	constructor(name, link, template) {
+	constructor({name, link}, template) {
 		this._name = name;
 		this._link = link;
 		this._template = template;
@@ -25,6 +25,7 @@ export default class Card {
 	// Удаление карточки
 	_handleElementDeleteBtn() {
 		this._element.remove();
+		this._element = null;
 	}
 
 	// Открытие картинки
@@ -49,10 +50,9 @@ export default class Card {
 	}
 
 	// Отрисовка новой карточки
-	renderCard() {
+	generateCard() {
 		this._element = this._getTemplate();
 		this._setEventListeners();
-
 		this._element.querySelector(".elements__title").textContent = this._name;
 		this._element.querySelector(".elements__image").src = this._link;
 		this._element.querySelector(".elements__image").alt = this._name;
