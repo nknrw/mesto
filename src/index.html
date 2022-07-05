@@ -8,11 +8,11 @@
 	</head>
 	<body class="page">
 		<header class="header">
-			<img class="header__logo" src="./images/logo.svg" alt="Логотип" />
+			<img class="header__logo" src="<%=require('./images/logo.svg')%>" alt="Логотип" />
 		</header>
 		<main class="content">
 			<section class="profile">
-				<img class="profile__photo" src="./images/avatar.jpg" alt="Аватар" />
+				<img class="profile__photo" src="<%=require('./images/avatar.jpg')%>" alt="Аватар" />
 				<div class="profile__info">
 					<h1 class="profile__name">Дарт Вейдер</h1>
 					<h2 class="profile__about">Темный лорд</h2>
@@ -106,6 +106,5 @@
 				<button type="button" class="elements__like-button"></button>
 			</li>
 		</template>
-		<script type="module" src="./script/index.js"></script>
 	</body>
 </html>

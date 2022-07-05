@@ -1,11 +1,12 @@
 // Импорты
-import { initialCards, validationConfig } from "./constants.js";
-import Card from "./Card.js";
-import FormValidator from "./FormValidator.js";
-import PopupWithImage from "./PopupWithImage.js";
-import PopupWithForm from "./PopupWithForm.js";
-import Section from "./Section.js";
-import UserInfo from "./UserInfo.js";
+import "./index.css"
+import { initialCards, validationConfig } from "../script/constants.js";
+import Card from "../script/Card.js";
+import FormValidator from "../script/FormValidator.js";
+import PopupWithImage from "../script/PopupWithImage.js";
+import PopupWithForm from "../script/PopupWithForm.js";
+import Section from "../script/Section.js";
+import UserInfo from "../script/UserInfo.js";
 
 //Определение функций
 function handleUserSubmit(formDataUser) {
