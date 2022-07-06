@@ -41,15 +41,15 @@ export default class FormValidator {
 	}
 
 	// Проверка валидности
-	_validateInputs(inputList) {
-		return inputList.some((input) => {
+	_validateInputs() {
+		return this._inputList.some((input) => {
 			return !input.validity.valid;
 		});
 	}
 
 	// Переключение состояния кнопки отправки
 	_toggleSubmitButton() {
-		if (this._validateInputs(this._inputList)) {
+		if (this._validateInputs()) {
 			this._buttonSubmit.classList.add(this._inactiveButtonClass);
 			this._buttonSubmit.disabled = true;
 		} else {

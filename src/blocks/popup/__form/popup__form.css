@@ -8,14 +8,16 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     align-items: center;
+    padding: 34px 36px 36px 36px;
+    box-sizing: border-box;
 }
 
 @media screen and (max-width: 767px) {
     .popup__form {
         width: 282px;
         height: 322px;
+        padding: 25px 22px 25px 22px;
     }
     
 }

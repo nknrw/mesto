@@ -1,12 +1,12 @@
 // Импорты
 import "./index.css"
-import { initialCards, validationConfig } from "../script/constants.js";
-import Card from "../script/Card.js";
-import FormValidator from "../script/FormValidator.js";
-import PopupWithImage from "../script/PopupWithImage.js";
-import PopupWithForm from "../script/PopupWithForm.js";
-import Section from "../script/Section.js";
-import UserInfo from "../script/UserInfo.js";
+import { initialCards, validationConfig } from "../utils/constants.js";
+import Card from "../components/Card.js";
+import FormValidator from "../components/FormValidator.js";
+import PopupWithImage from "../components/PopupWithImage.js";
+import PopupWithForm from "../components/PopupWithForm.js";
+import Section from "../components/Section.js";
+import UserInfo from "../components/UserInfo.js";
 
 //Определение функций
 function handleUserSubmit(formDataUser) {
@@ -29,8 +29,8 @@ function handleCardOpen() {
 	formValidatorCard.cleanErrorForm();
 }
 // обработчик открытия картинки
-function handleCardClick() {
-	popupWithImage.open(this._name, this._link);
+function handleCardClick(name, link) { 
+    popupWithImage.open(name, link); 
 }
 // 
 function createCard(item) {

@@ -1,8 +1,8 @@
 export default class Card {
-	constructor({ name, link }, template, handleCardClick) {
+	constructor({ name, link }, templateSelector, handleCardClick) {
 		this._name = name;
 		this._link = link;
-		this._template = template;
+		this._template = templateSelector;
 		this._handleCardClick = handleCardClick;
 	}
 	// Получение шаблона карточки
@@ -33,7 +33,7 @@ export default class Card {
 			evt.stopPropagation();
 			this._handleElementDeleteBtn();
 		});
-		this._element.addEventListener("click", () => {
+		this._cardImage.addEventListener("click", () => { 
 			this._handleCardClick(this._name, this._link);
 		});
 	}

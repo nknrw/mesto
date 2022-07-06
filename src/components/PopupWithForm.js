@@ -1,4 +1,4 @@
-import Popup from "../script/Popup.js";
+import Popup from "../components/Popup.js";
 
 export default class PopupWithForm extends Popup {
 	constructor(popupSelector, handleFormSumit, handleFormOpen) {
@@ -15,7 +15,7 @@ export default class PopupWithForm extends Popup {
 			this._formValues[input.name] = input.value;
 		});
 		return this._formValues;
-	}
+	};
 
 	open() {
 		super.open();
