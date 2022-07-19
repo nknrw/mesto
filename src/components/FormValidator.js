@@ -1,13 +1,11 @@
 export default class FormValidator {
 	constructor(config, form) {
 		this._form = form;
-		// this._formSelector = config.formSelector;
 		this._inputSelector = config.inputSelector;
 		this._submitButtonSelector = config.submitButtonSelector;
 		this._inactiveButtonClass = config.inactiveButtonClass;
 		this._inputErrorClass = config.inputErrorClass;
 		this._errorClass = config.errorClass;
-
 		this._inputList = Array.from(this._form.querySelectorAll(this._inputSelector));
 		this._buttonSubmit = this._form.querySelector(this._submitButtonSelector);
 	}
@@ -45,7 +43,7 @@ export default class FormValidator {
 		});
 	}
 
-	// Переключение состояния кнопки отправки
+	// Переключение состояния кнопки
 	_toggleSubmitButton() {
 		if (this._validateInputs()) {
 			this._buttonSubmit.classList.add(this._inactiveButtonClass);

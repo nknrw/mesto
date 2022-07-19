@@ -4,18 +4,18 @@
 		<title>Mesto</title>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<!-- <link rel="stylesheet" href="./pages/index.css" /> -->
 	</head>
 	<body class="page">
 		<header class="header">
 			<img class="header__logo" src="<%=require('./images/logo.svg')%>" alt="Логотип" />
 		</header>
 		<main class="content">
+			<!-- Профиль пользователя -->
 			<section class="profile">
-				<div class="profile__avatar-group">
+				<div class="profile__avatar-container">
 					<img
 						class="profile__avatar"
-						src="<%=require('./images/avatar.jpg')%>"
+						src="<%=require('./images/avatar.png')%>"
 						alt="Аватар пользователя"
 					/>
 					<div class="profile__avatar-overlay">
@@ -23,32 +23,12 @@
 					</div>
 				</div>
 				<div class="profile__info">
-					<!--<h1 class="profile__name">Имя пользователя</h1>
-					<h2 class="profile__about">О пользователе</h2> -->
 					<h1 class="profile__name">Имя пользователя</h1>
 					<h2 class="profile__about">О пользователе</h2>
-
-					<!-- <p class="profile__job">Темный лорд</p> -->
 				</div>
 				<button type="button" class="profile__edit-button"></button>
 				<button type="button" class="profile__add-button"></button>
 			</section>
-			<!--<section class="profile">
-				 <img class="profile__photo" src="<%=require('./images/avatar.jpg')%>" alt="Аватар" /> 
-
-				<div class="profile__avatar-group">
-					<img src="<%=require('./images/avatar.jpg')%>" alt="Аватар пользователя" class="profile__avatar">
-					<div class="profile__avatar-overlay">
-					  <button class="profile__avatar-button"></button>
-					</div>
-				  </div>
-
-					<h1 class="profile__name">Дарт Вейдер</h1>
-					<h2 class="profile__about">Темный лорд</h2>
-				</div>
-				<button type="button" class="profile__edit-button"></button>
-				<button type="button" class="profile__add-button"></button>
-			</section>-->
 			<section class="elements">
 				<ul class="elements__container"></ul>
 			</section>
@@ -56,7 +36,7 @@
 		<footer class="footer">
 			<p class="footer__copyright">© 2022 Mesto Russia</p>
 		</footer>
-		<!-- Popup редактирования профиля -->
+		<!-- Попап редактирования профиля -->
 		<section class="popup popup_profile">
 			<form class="popup__form" name="form-profile">
 				<h3 class="popup__title">Редактировать профиль</h3>
@@ -88,7 +68,7 @@
 				<button type="button" class="popup__close-button popup__close"></button>
 			</form>
 		</section>
-		<!-- Popup добавления новых карточек -->
+		<!-- Попап добавления новых карточек -->
 		<section class="popup popup_card">
 			<form class="popup__form" name="form-card">
 				<h3 class="popup__title">Новое место</h3>
@@ -116,8 +96,7 @@
 				<button type="button" class="popup__close-button popup__close"></button>
 			</form>
 		</section>
-
-		<!-- Форма редактирования аватара -->
+		<!-- Попап редактирования аватара -->
 		<section class="popup popup_avatar">
 			<form class="popup__form" name="form-avatar">
 				<h3 class="popup__title">Загрузить аватар</h3>
@@ -134,8 +113,7 @@
 				<button type="button" class="popup__close-button popup__close"></button>
 			</form>
 		</section>
-
-		<!-- Форма удаления карточки -->
+		<!-- Попап удаления карточки -->
 		<section class="popup popup_delete">
 			<form class="popup__form" name="form-delete">
 				<h3 class="popup__title popup__title_delete">Вы уверены?</h3>
@@ -143,8 +121,7 @@
 				<button type="button" class="popup__close-button popup__close"></button>
 			</form>
 		</section>
-
-		<!-- Popup открытия фото -->
+		<!-- Попап открытия фото -->
 		<section class="popup popup_fullscreen">
 			<div class="popup__image-container">
 				<figure class="popup__figure">
@@ -160,7 +137,7 @@
 				<button type="button" class="elements__trash-button"></button>
 				<img class="elements__image" />
 				<h2 class="elements__title"></h2>
-				<div class="elements__like-group">
+				<div class="elements__like-container">
 					<button type="button" class="elements__like-button"></button>
 					<p class="elements__like-counter">0</p>
 				</div>

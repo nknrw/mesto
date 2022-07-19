@@ -17,6 +17,7 @@ export default class Card {
 		this._handleCardLike = handleCardLike; // обработчик клика по лайку
 		this._handleDeleteClick = handleDeleteClick; // обработчик клика по удалению карточки
 	}
+
 	// Получение шаблона карточки
 	_getTemplate() {
 		const cardElement = document
@@ -25,31 +26,32 @@ export default class Card {
 			.cloneNode(true);
 		return cardElement;
 	}
+
 	// Удаление карточки
 	deleteCard() {
 		this._element.remove();
 		this._element = null;
 	}
 
-	// Проверяет, лайкнул ли пользователь карточку
+	// Проверка лайка владельца карточки
 	checkOwnerLike() {
 		return this.likes.some((like) => {
 			return like._id === this._userId;
 		});
 	}
-	// Устанавливает картинку лайка
+
+	// Изменение иконки лайка
 	setLikeImage() {
 		this._cardLikeButton.classList.toggle("elements__like-button_active", this.checkOwnerLike());
 	}
-	//
 
-	//
+	// Отрисовка лайков
 	renderLike(likes) {
 		this.likes = likes;
 		this.setLikeNumber(this.likes.length);
 		this.setLikeImage();
 	}
-	//
+
 	// Установка слушателей
 	_setEventListeners() {
 		this._cardLikeButton.addEventListener("click", (evt) => {
@@ -63,10 +65,11 @@ export default class Card {
 		});
 	}
 
-	// Обновляет количество лайков
+	// Количество лайков
 	setLikeNumber(number) {
 		this._likeCounter.textContent = number;
 	}
+	
 	// Отрисовка новой карточки
 	generateCard() {
 		this._element = this._getTemplate(); // получаем шаблон карточки
@@ -74,13 +77,11 @@ export default class Card {
 		this._cardTitle = this._element.querySelector(".elements__title"); // название карточки
 		this._cardLikeButton = this._element.querySelector(".elements__like-button"); // кнопка лайка
 		this._cardDeleteButton = this._element.querySelector(".elements__trash-button"); // кнопка удаления карточки
-		// console.log(this._cardDeleteButton);
 		this._likeCounter = this._element.querySelector(".elements__like-counter"); // количество лайков
 		if (this._ownerId != this._userId) {
 			this._cardDeleteButton.remove(); // удаление карточки для не владельца
 		}
 		this._setEventListeners();
-
 		this._cardTitle.textContent = this._name; // заполняем название карточки
 		this._cardImage.src = this._link; // заполняем картинку карточки
 		this._cardTitle.alt = this._name; // заполняем альт картинки
@@ -90,16 +91,3 @@ export default class Card {
 		return this._element;
 	}
 }
-// _setEventListeners() {
-// 	this._cardLikeButton.addEventListener("click", (evt) => {
-// 		evt.stopPropagation();
-// 		this._handleElementLikeBtn();
-// 	});
-// 	this._cardDeleteButton.addEventListener("click", (evt) => {
-// 		evt.stopPropagation();
-// 		this._handleElementDeleteBtn();
-// 	});
-// 	this._cardImage.addEventListener("click", () => {
-// 		this._handleCardClick(this._name, this._link);
-// 	});
-// }

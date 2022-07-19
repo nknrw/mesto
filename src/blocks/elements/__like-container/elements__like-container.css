@@ -1,0 +1,10 @@
+.elements__like-container {
+	margin-right: 20px;
+	padding: 0;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 3px;
+}

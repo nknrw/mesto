@@ -8,19 +8,23 @@ export default class PopupWithConfirmation extends Popup {
 		this.button = this.popupForm.querySelector('.popup__submit-button');
 	}
 
+	// Изменение текста кнопки
 	setButtonText(text) {
 		this.button.textContent = text;
 	}
 
+	// Открытие
 	open() {
 		super.open();
 	}
 
+	// Удаление
 	setDeleteCard(card, id) {
 		this.cardForDelete = card;
 		this.idForDelete = id;
 	}
 
+	// Слушатели
 	setEventListeners() {
 		super.setEventListeners();
 
@@ -31,17 +35,9 @@ export default class PopupWithConfirmation extends Popup {
 		});
 	}
 
+	// Закрытие
 	close() {
 		super.close();
 		this.popupForm.reset();
 	}
 }
-//
-// setEventListeners() {
-// 	super.setEventListeners();
-// 	this._popup.addEventListener("click", (evt) => {
-// 		if (evt.target.classList.contains("popup__button")) {
-// 			this.close();
-// 		}
-// 	});
-// }
