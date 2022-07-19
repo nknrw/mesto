@@ -4,7 +4,7 @@
     border: none;
     width: 20px;
     height: 20px;
-    margin: auto 20px auto 0;
+    /* margin: auto 20px auto 0; */
     background-image: url(../../../images/like_unactive.svg);
     background-position: center;
     background-repeat: no-repeat;

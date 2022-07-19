@@ -12,7 +12,7 @@
     top: 20px;
     right: 20px;
     z-index: 10;
-    background-image: url(../../../images/Trash.svg);
+    background-image: url('../../../images/Trash.svg');
 }
 
 .elements__trash-button:hover {

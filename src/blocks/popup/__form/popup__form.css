@@ -1,7 +1,7 @@
 .popup__form {
     background-color: #fff;
     width: 430px;
-    height: 330px;
+    /* height: 330px; */
     z-index: 3;
     border-radius: 10px;
     box-shadow: 0px 0px 25px #000;

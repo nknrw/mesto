@@ -1,7 +1,7 @@
 {
   "name": "mesto",
   "version": "0.0.1",
-  "description": "Проектная работа \"Mesto\" по 4-5-6 спринту на курсе веб-разработки от Яндекс.Практикум.",
+  "description": "Проектная работа \"Mesto\" по 4-5-6-7-8 спринту на курсе веб-разработки от Яндекс.Практикум.",
   "main": "index.js",
   "scripts": {
     "build": "webpack --mode production",

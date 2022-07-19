@@ -12,14 +12,43 @@
 		</header>
 		<main class="content">
 			<section class="profile">
-				<img class="profile__photo" src="<%=require('./images/avatar.jpg')%>" alt="Аватар" />
+				<div class="profile__avatar-group">
+					<img
+						class="profile__avatar"
+						src="<%=require('./images/avatar.jpg')%>"
+						alt="Аватар пользователя"
+					/>
+					<div class="profile__avatar-overlay">
+						<button class="profile__avatar-button"></button>
+					</div>
+				</div>
 				<div class="profile__info">
+					<!--<h1 class="profile__name">Имя пользователя</h1>
+					<h2 class="profile__about">О пользователе</h2> -->
+					<h1 class="profile__name">Имя пользователя</h1>
+					<h2 class="profile__about">О пользователе</h2>
+
+					<!-- <p class="profile__job">Темный лорд</p> -->
+				</div>
+				<button type="button" class="profile__edit-button"></button>
+				<button type="button" class="profile__add-button"></button>
+			</section>
+			<!--<section class="profile">
+				 <img class="profile__photo" src="<%=require('./images/avatar.jpg')%>" alt="Аватар" /> 
+
+				<div class="profile__avatar-group">
+					<img src="<%=require('./images/avatar.jpg')%>" alt="Аватар пользователя" class="profile__avatar">
+					<div class="profile__avatar-overlay">
+					  <button class="profile__avatar-button"></button>
+					</div>
+				  </div>
+
 					<h1 class="profile__name">Дарт Вейдер</h1>
 					<h2 class="profile__about">Темный лорд</h2>
 				</div>
 				<button type="button" class="profile__edit-button"></button>
 				<button type="button" class="profile__add-button"></button>
-			</section>
+			</section>-->
 			<section class="elements">
 				<ul class="elements__container"></ul>
 			</section>
@@ -29,14 +58,14 @@
 		</footer>
 		<!-- Popup редактирования профиля -->
 		<section class="popup popup_profile">
-			<form class="popup__form" name="form-profile" novalidate>
+			<form class="popup__form" name="form-profile">
 				<h3 class="popup__title">Редактировать профиль</h3>
 				<input
 					id="name-input"
 					class="popup__input popup__input_name"
 					placeholder="Имя"
 					type="text"
-					name="userName"
+					name="name"
 					value="Жак-Ив Кусто"
 					required
 					maxlength="40"
@@ -48,7 +77,7 @@
 					class="popup__input popup__input_about"
 					placeholder="Профессия"
 					type="text"
-					name="userAbout"
+					name="about"
 					value="Исследователь океана"
 					required
 					maxlength="200"
@@ -61,7 +90,7 @@
 		</section>
 		<!-- Popup добавления новых карточек -->
 		<section class="popup popup_card">
-			<form class="popup__form" name="form-card" novalidate>
+			<form class="popup__form" name="form-card">
 				<h3 class="popup__title">Новое место</h3>
 				<input
 					id="title-input"
@@ -87,6 +116,34 @@
 				<button type="button" class="popup__close-button popup__close"></button>
 			</form>
 		</section>
+
+		<!-- Форма редактирования аватара -->
+		<section class="popup popup_avatar">
+			<form class="popup__form" name="form-avatar">
+				<h3 class="popup__title">Загрузить аватар</h3>
+				<input
+					class="popup__input popup__input_avatar"
+					id="avatar-input"
+					placeholder="Ссылка на аватар"
+					type="url"
+					name="avatar"
+					required
+				/>
+				<span class="popup__input-error avatar-input-error"></span>
+				<button class="popup__submit-button" type="submit">Сохранить</button>
+				<button type="button" class="popup__close-button popup__close"></button>
+			</form>
+		</section>
+
+		<!-- Форма удаления карточки -->
+		<section class="popup popup_delete">
+			<form class="popup__form" name="form-delete">
+				<h3 class="popup__title popup__title_delete">Вы уверены?</h3>
+				<button class="popup__submit-button popup__submit-button_delete" type="submit">Да</button>
+				<button type="button" class="popup__close-button popup__close"></button>
+			</form>
+		</section>
+
 		<!-- Popup открытия фото -->
 		<section class="popup popup_fullscreen">
 			<div class="popup__image-container">
@@ -103,7 +160,10 @@
 				<button type="button" class="elements__trash-button"></button>
 				<img class="elements__image" />
 				<h2 class="elements__title"></h2>
-				<button type="button" class="elements__like-button"></button>
+				<div class="elements__like-group">
+					<button type="button" class="elements__like-button"></button>
+					<p class="elements__like-counter">0</p>
+				</div>
 			</li>
 		</template>
 	</body>
