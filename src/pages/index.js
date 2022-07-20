@@ -47,7 +47,6 @@ Promise.all([api.getUserInfo(), api.getInitialCards()])
 	.then(([info, initialCards]) => {
 		userData.editUserInfo(info);
 		cardList.rendererItems(initialCards);
-		console.log('Data loaded');
 	})
 	.catch((err) => console.log(err));
 
@@ -62,7 +61,6 @@ function handleUserOpen() {
 // Отправка данных пользователя
 function handleUserSubmit(dataUser) {
 	this.setButtonText('Сохранение...');
-	console.log(dataUser); // выводим данные пользователя
 	api
 		.setUserInfo(dataUser)
 		.then((res) => {
