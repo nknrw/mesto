@@ -1,5 +1,5 @@
 import './index.css';
-import { validationConfig } from '../utils/constants.js';
+import {validationConfig} from '../utils/constants.js';
 import Card from '../components/Card.js';
 import FormValidator from '../components/FormValidator.js';
 import PopupWithImage from '../components/PopupWithImage.js';
@@ -121,8 +121,7 @@ function createCard(item) {
 		() => handleCardLike(card, item._id),
 		() => handleDelete(card, item._id)
 	);
-	const cardElement = card.generateCard();
-	return cardElement;
+	return card.generateCard();
 }
 
 // Отрисовка карточек
